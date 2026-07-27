@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2막1장 · 은퇴 정밀진단 Ver.14 (40문항)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#4a7c3a;--green-deep:#3d6830;--green-light:#6ba055;--green-soft:#d8e6cf;--green-bg:#eef4e8;
+    --burgundy:#6b2c3e;--burgundy-deep:#521f2f;--burgundy-soft:#f0d8de;--burgundy-bg:#f7e8eb;
+    --cream:#faf6ee;--cream-warm:#f3ecde;--gold:#c9a449;--gold-soft:#f0e0b8;
+    --ink:#2a2a2e;--ink-soft:#4a4a52;--muted:#8a8a92;--line:#e6dfd0;--line-soft:#f0ebde;
+    --shadow:0 1px 3px rgba(74,124,58,.06),0 4px 12px rgba(74,124,58,.08);
+    --shadow-lg:0 4px 16px rgba(74,124,58,.10),0 12px 32px rgba(74,124,58,.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--cream);font-family:'Noto Sans KR',sans-serif;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .topnav{background:rgba(250,246,238,.95);border-bottom:1px solid var(--line);padding:14px 0;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px);}
+  .nav-inner{max-width:920px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;}
+  .logo .ko{font-family:'Noto Serif KR',serif;font-size:20px;font-weight:700;color:var(--green-deep);letter-spacing:-1px;}
+  .logo .en{font-family:'Fraunces',serif;font-size:10px;color:var(--burgundy);letter-spacing:1px;}
+  .nav-badge{font-size:11px;font-weight:700;color:#fff;background:var(--burgundy);padding:5px 12px;border-radius:100px;}
+  .page{max-width:920px;margin:0 auto;padding:28px 24px 80px;}
+  .screen{display:none;} .screen.active{display:block;animation:fade .4s;}
+  @keyframes fade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  .eyebrow{display:inline-block;background:var(--green-soft);color:var(--green-deep);font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 13px;border-radius:100px;margin-bottom:10px;}
+  .eyebrow.gold{background:var(--gold-soft);color:#8a6a20;} .eyebrow.burgundy{background:var(--burgundy-soft);color:var(--burgundy-deep);}
+
+  /* ===== INTRO ===== */
+  .intro{text-align:center;padding:40px 0 10px;}
+  .intro h1{font-family:'Noto Serif KR',serif;font-size:38px;font-weight:700;color:var(--green-deep);letter-spacing:-1.5px;line-height:1.2;margin-bottom:14px;}
+  .intro h1 em{font-family:'Fraunces',serif;font-style:italic;color:var(--burgundy);font-weight:500;}
+  .intro .lede{font-size:16px;color:var(--ink-soft);max-width:560px;margin:0 auto 8px;}
+  .intro .meta{font-size:13px;color:var(--muted);margin-top:6px;}
+  .card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 32px;box-shadow:var(--shadow-lg);max-width:560px;margin:28px auto 0;text-align:left;}
+  .parts6{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0 24px;}
+  .p6{background:var(--cream-warm);border-radius:12px;padding:12px 10px;text-align:center;font-size:12px;font-weight:600;color:var(--green-deep);}
+  .p6 .n{font-family:'Fraunces',serif;font-size:16px;color:var(--burgundy);display:block;}
+  .fg{margin-bottom:16px;}
+  .fg label{display:block;font-size:13px;font-weight:600;color:var(--green-deep);margin-bottom:6px;}
+  .fg input[type=text],.fg input[type=tel]{width:100%;background:var(--cream-warm);border:2px solid transparent;padding:13px 15px;font-family:inherit;font-size:15px;border-radius:11px;transition:.2s;}
+  .fg input:focus{outline:none;border-color:var(--green);background:#fff;box-shadow:0 0 0 4px var(--green-soft);}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-soft);cursor:pointer;}
+  .consent input{margin-top:3px;width:18px;height:18px;flex-shrink:0;}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:none;font-family:inherit;font-weight:700;cursor:pointer;transition:.2s;border-radius:100px;}
+  .btn-primary{background:var(--burgundy);color:#fff;font-size:16px;padding:15px 34px;box-shadow:0 6px 18px rgba(107,44,62,.25);width:100%;}
+  .btn-primary:hover{background:var(--burgundy-deep);transform:translateY(-2px);}
+  .btn-green{background:var(--green-deep);color:#fff;font-size:15px;padding:14px 30px;}
+  .btn-green:hover{background:var(--green);transform:translateY(-1px);}
+  .btn-ghost{background:transparent;color:var(--muted);border:2px solid var(--line);font-size:15px;padding:13px 24px;}
+  .btn-ghost:hover{border-color:var(--green-deep);color:var(--green-deep);}
+
+  /* ===== 파트 도식 인트로 ===== */
+  .pintro{max-width:660px;margin:0 auto;text-align:center;background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px 26px;box-shadow:var(--shadow-lg);}
+  .pi-title{font-family:'Noto Serif KR',serif;font-size:23px;font-weight:700;color:var(--green-deep);letter-spacing:-.5px;margin:8px 0 2px;line-height:1.35;}
+  .pi-title em{font-family:'Fraunces',serif;font-style:italic;color:var(--burgundy);font-weight:500;}
+  .pi-diagram{background:var(--cream);border:1px solid var(--line-soft);border-radius:16px;padding:14px 10px;margin:14px 0;}
+  .pi-diagram svg{width:100%;height:auto;display:block;}
+  .pi-msg{font-size:15px;color:var(--ink);font-weight:600;line-height:1.65;margin:4px auto 2px;max-width:520px;}
+  .pi-msg b{color:var(--burgundy);}
+  .pi-hint{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+  .pi-btn{max-width:360px;margin:0 auto;}
+  .svg-band{fill:var(--burgundy-soft);opacity:.5;}
+  .svg-lbl{font-family:'Noto Sans KR',sans-serif;font-weight:700;fill:var(--green-deep);}
+  .svg-sub{font-family:'Noto Sans KR',sans-serif;fill:var(--muted);}
+  .svg-cap{font-family:'Noto Serif KR',serif;font-weight:700;}
+
+  /* ===== QUIZ ===== */
+  .progress-wrap{max-width:720px;margin:8px auto 26px;}
+  .progress-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+  .progress-top .t{font-size:13px;color:var(--muted);font-weight:500;} .progress-top .t strong{color:var(--green-deep);}
+  .progress-top .pct{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--burgundy);}
+  .bar{height:6px;background:var(--line-soft);border-radius:100px;overflow:hidden;}
+  .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--gold),var(--burgundy));border-radius:100px;transition:width .5s cubic-bezier(.4,0,.2,1);}
+  .part-title{font-family:'Noto Serif KR',serif;font-size:24px;font-weight:700;color:var(--green-deep);letter-spacing:-.5px;margin:4px 0 20px;text-align:center;}
+  .qcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin-bottom:14px;box-shadow:var(--shadow);}
+  .qcard .qq{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:14px;line-height:1.5;}
+  .qcard .qq .qno{display:inline-block;font-family:'Fraunces',serif;color:var(--burgundy);font-size:13px;font-weight:600;margin-right:8px;}
+  .qcard .qhint{font-size:12px;color:var(--muted);font-weight:400;margin-left:6px;}
+  .opts{display:flex;flex-direction:column;gap:8px;}
+  .opts.row{flex-direction:row;flex-wrap:wrap;}
+  .opt{border:2px solid var(--line);background:#fff;border-radius:12px;padding:13px 16px;font-size:14.5px;color:var(--ink-soft);cursor:pointer;transition:.15s;font-weight:500;}
+  .opts.row .opt{flex:1;min-width:120px;text-align:center;}
+  .opt:hover{border-color:var(--green);color:var(--green-deep);}
+  .opt.sel{background:var(--green-deep);border-color:var(--green-deep);color:#fff;}
+  .opt.multi.sel{background:var(--green);border-color:var(--green);}
+  .qtext{width:100%;background:var(--cream-warm);border:2px solid transparent;padding:13px 15px;font-family:inherit;font-size:15px;border-radius:11px;}
+  .qtext:focus{outline:none;border-color:var(--green);background:#fff;box-shadow:0 0 0 4px var(--green-soft);}
+  .qnav{display:flex;gap:12px;margin-top:24px;}
+  .qnav .btn{flex:1;}
+  .cond-note{font-size:12px;color:var(--gold);font-weight:600;margin-top:-6px;margin-bottom:10px;}
+
+  /* ===== TEASER (예시 리포트) — 파일6과 동일 톤 ===== */
+  .t-intro{text-align:center;padding:8px 0;}
+  .t-intro h2{font-family:'Noto Serif KR',serif;font-size:26px;font-weight:700;color:var(--green-deep);letter-spacing:-1px;line-height:1.3;}
+  .t-intro h2 em{font-family:'Fraunces',serif;font-style:italic;color:var(--burgundy);font-weight:500;}
+  .t-intro p{color:var(--ink-soft);font-size:14px;margin-top:8px;}
+  .t-mock{display:inline-block;margin-top:10px;font-size:12px;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:100px;padding:4px 14px;}
+  .preview-frame{position:relative;margin-top:18px;}
+
+  /* 공통 리포트 컴포넌트 */
+  .score-hero{background:var(--green-deep);color:#fff;border-radius:26px;padding:34px 36px;position:relative;overflow:hidden;}
+  .score-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:340px;height:340px;background:radial-gradient(circle,rgba(201,164,73,.25)0%,transparent 60%);}
+  .sh-grid{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;position:relative;z-index:1;}
+  .sh-greet{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:6px;}
+  .sh-name{font-family:'Noto Serif KR',serif;font-size:25px;font-weight:700;line-height:1.25;margin-bottom:12px;letter-spacing:-.8px;}
+  .sh-name em{font-family:'Fraunces',serif;color:var(--gold-soft);font-style:italic;font-weight:500;}
+  .sh-tags{display:flex;gap:7px;flex-wrap:wrap;}
+  .sh-tag{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:12px;padding:5px 12px;border-radius:100px;}
+  .sh-tag.gold{background:var(--gold);border-color:var(--gold);color:var(--green-deep);font-weight:700;}
+  .ring{width:170px;height:170px;position:relative;margin:0 auto;}
+  .ring svg{transform:rotate(-90deg);width:100%;height:100%;}
+  .ring .bg2{fill:none;stroke:rgba(255,255,255,.12);stroke-width:13;}
+  .ring .fg2{fill:none;stroke:var(--gold);stroke-width:13;stroke-linecap:round;}
+  .ring .num{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;}
+  .ring .num .big{font-family:'Fraunces',serif;font-size:50px;font-weight:600;line-height:1;letter-spacing:-2px;}
+  .ring .num .unit{font-size:11px;color:rgba(255,255,255,.65);letter-spacing:2px;}
+  .ring-grade{text-align:center;margin-top:10px;font-family:'Noto Serif KR',serif;font-size:15px;font-weight:700;color:var(--gold-soft);}
+  .ring-sub{text-align:center;font-size:11px;color:rgba(255,255,255,.6);margin-top:2px;}
+  .metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px;}
+  .mcard{background:#fff;border:1px solid var(--line-soft);border-radius:18px;padding:20px;box-shadow:var(--shadow);}
+  .mcard .ic{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:10px;background:var(--green-soft);}
+  .mcard .ic.b{background:var(--burgundy-soft);} .mcard .ic.g{background:var(--gold-soft);}
+  .mcard .lb{font-size:12px;color:var(--muted);margin-bottom:3px;}
+  .mcard .vl{font-family:'Fraunces',serif;font-size:29px;font-weight:600;color:var(--green-deep);line-height:1;letter-spacing:-1px;}
+  .mcard .vl.warn{color:var(--burgundy);} .mcard .vl .u{font-size:14px;color:var(--muted);font-weight:500;}
+  .mcard .ds{font-size:12px;color:var(--ink-soft);margin-top:6px;}
+  .radar-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px 28px;margin-top:16px;box-shadow:var(--shadow);}
+  .radar-card h2{font-family:'Noto Serif KR',serif;font-size:22px;color:var(--green-deep);font-weight:700;letter-spacing:-.5px;}
+  .radar-card h2 em{font-family:'Fraunces',serif;font-style:italic;color:var(--burgundy);font-weight:500;}
+  .radar-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center;margin-top:12px;}
+  .radar-svg{width:100%;max-width:300px;margin:0 auto;display:block;}
+  .r-axis-label{font-family:'Noto Serif KR',serif;font-size:11px;fill:var(--green-deep);font-weight:700;}
+  .r-grid{fill:none;stroke:var(--line);stroke-width:1;} .r-axis{stroke:var(--line);stroke-width:1;}
+  .r-fill{fill:var(--green);fill-opacity:.22;stroke:var(--green);stroke-width:2;} .r-dot{fill:var(--burgundy);stroke:#fff;stroke-width:2;}
+  .legend{display:flex;flex-direction:column;gap:8px;}
+  .lg-item{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;background:var(--cream-warm);border-radius:11px;border-left:4px solid var(--green);}
+  .lg-item.mid{border-left-color:var(--gold);background:#fdf9eb;} .lg-item.low{border-left-color:var(--burgundy);background:var(--burgundy-bg);}
+  .lg-name{font-family:'Noto Serif KR',serif;font-size:13px;font-weight:700;color:var(--green-deep);}
+  .lg-score{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--green-deep);}
+  .lg-item.mid .lg-score{color:#a07520;} .lg-item.low .lg-score{color:var(--burgundy);}
+  .sec-block{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 26px;margin-top:16px;box-shadow:var(--shadow);}
+  .sec-block h3{font-family:'Noto Serif KR',serif;font-size:18px;font-weight:700;color:var(--green-deep);margin-bottom:14px;}
+  .weak-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line-soft);}
+  .weak-row:last-child{border-bottom:none;}
+  .weak-rank{width:30px;height:30px;border-radius:50%;background:var(--burgundy);color:#fff;font-family:'Fraunces',serif;font-weight:600;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+  .weak-rank.two{background:var(--gold);color:var(--green-deep);} .weak-rank.ok{background:var(--green);}
+  .weak-txt{flex:1;font-size:14px;color:var(--ink-soft);} .weak-txt b{color:var(--ink);}
+  .income-table{width:100%;border-collapse:collapse;}
+  .income-table td{padding:10px 4px;border-bottom:1px solid var(--line-soft);font-size:14px;}
+  .income-table td:last-child{text-align:right;font-family:'Fraunces',serif;font-weight:600;color:var(--green-deep);}
+  .income-table tr.tot td{border-bottom:none;font-weight:700;} .income-table tr.tot td:last-child{color:var(--burgundy);font-size:17px;}
+
+  /* What-if */
+  .whatif{background:linear-gradient(135deg,#fdf9f0 0%,#f0e6d3 100%);border:1px solid var(--gold);border-radius:22px;padding:26px 28px;margin-top:16px;}
+  .whatif h3{font-family:'Noto Serif KR',serif;font-size:20px;color:var(--green-deep);font-weight:700;}
+  .whatif h3 em{font-family:'Fraunces',serif;font-style:italic;color:var(--burgundy);font-weight:500;}
+  .wi-result{background:var(--green-deep);color:#fff;border-radius:16px;padding:20px 24px;margin:16px 0;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .wi-res-item .l{font-size:12px;color:rgba(255,255,255,.7);}
+  .wi-res-item .v{font-family:'Fraunces',serif;font-size:28px;font-weight:600;color:var(--gold);letter-spacing:-1px;}
+  .wi-res-item .v.small{font-size:20px;}
+  .wi-sliders{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .wi-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;}
+  .wi-card .h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;}
+  .wi-card .h .n{font-family:'Noto Serif KR',serif;font-size:13px;font-weight:700;color:var(--green-deep);}
+  .wi-card .h .val{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--burgundy);}
+  .wi-card input[type=range]{width:100%;height:6px;background:var(--line-soft);border-radius:100px;-webkit-appearance:none;appearance:none;outline:none;cursor:pointer;margin:6px 0;}
+  .wi-card input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--burgundy);border:3px solid #fff;box-shadow:0 2px 6px rgba(107,44,62,.4);cursor:pointer;}
+  .wi-card .rng{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);}
+  .wi-toggle{display:flex;gap:6px;margin-top:4px;}
+  .wi-toggle button{flex:1;border:1px solid var(--line);background:#fff;border-radius:100px;padding:6px;font-size:12px;font-weight:600;color:var(--ink-soft);cursor:pointer;}
+  .wi-toggle button.on{background:var(--green-deep);color:#fff;border-color:var(--green-deep);}
+
+  .fade{position:absolute;left:0;right:0;bottom:0;height:320px;background:linear-gradient(to bottom,rgba(250,246,238,0),rgba(250,246,238,.8)45%,var(--cream)82%);pointer-events:none;z-index:5;}
+  .cta{position:relative;z-index:6;max-width:560px;margin:-150px auto 0;text-align:center;padding:0 12px 20px;}
+  .cta-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px 30px;box-shadow:var(--shadow-lg);}
+  .cta-card h2{font-family:'Noto Serif KR',serif;font-size:22px;font-weight:700;color:var(--green-deep);line-height:1.35;letter-spacing:-.5px;}
+  .cta-card h2 em{font-family:'Fraunces',serif;font-style:italic;color:var(--burgundy);font-weight:500;}
+  .cta-card p{font-size:14px;color:var(--ink-soft);margin:10px 0 20px;}
+  .cta-meta{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:20px;font-size:12.5px;color:var(--muted);}
+
+  /* 탭 상세 리포트 */
+  .tabs{display:flex;gap:6px;background:#fff;border:1px solid var(--line-soft);border-radius:16px;padding:6px;margin-top:4px;box-shadow:var(--shadow);overflow-x:auto;}
+  .tab{flex:1;white-space:nowrap;border:1px solid var(--line);background:var(--cream-warm);font-family:inherit;font-size:14px;font-weight:700;color:var(--green-deep);padding:12px 14px;border-radius:11px;cursor:pointer;transition:.2s;}
+  .tab:hover{background:var(--green-soft);}
+  .tab.active{background:var(--green-deep);color:#fff;border-color:var(--green-deep);}
+  /* 설문 유도 카드 */
+  .survey-gate{background:linear-gradient(135deg,var(--burgundy),var(--burgundy-deep));color:#fff;border-radius:22px;padding:30px 30px;margin-top:20px;text-align:center;box-shadow:var(--shadow-lg);}
+  .survey-gate .eyebrow{background:var(--gold);color:var(--green-deep);}
+  .survey-gate h2{font-family:'Noto Serif KR',serif;font-size:23px;font-weight:700;line-height:1.35;margin:8px 0 6px;letter-spacing:-.5px;}
+  .survey-gate h2 em{font-family:'Fraunces',serif;font-style:italic;color:var(--gold-soft);font-weight:500;}
+  .survey-gate p{font-size:14px;color:rgba(255,255,255,.9);margin-bottom:8px;line-height:1.6;}
+  .survey-gate .codechip{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);border-radius:100px;padding:4px 14px;font-family:'Fraunces',serif;font-weight:600;color:#fff;font-size:15px;margin:2px 0 18px;}
+  .btn-survey{background:var(--gold);color:var(--green-deep);border:none;font-family:inherit;font-weight:700;font-size:16px;padding:15px 36px;border-radius:100px;cursor:pointer;transition:.2s;box-shadow:0 6px 18px rgba(0,0,0,.15);}
+  .btn-survey:hover{background:#fff;transform:translateY(-2px);}
+  .survey-gate .linklike{display:inline-block;margin-top:14px;background:none;border:none;color:rgba(255,255,255,.7);font-size:12.5px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-family:inherit;}
+  .survey-gate .linklike:hover{color:#fff;}
+  .consult-sec .eyebrow{background:var(--gold-soft);color:#8a6a20;}
+  .consult-sec h3 em{font-family:'Fraunces',serif;font-style:italic;color:var(--burgundy);font-weight:500;}
+  .op-reset{display:inline-block;margin-top:10px;background:none;border:none;color:var(--muted);font-size:11.5px;text-decoration:underline;cursor:pointer;font-family:inherit;}
+  .panel{display:none;} .panel.active{display:block;animation:fade .35s;}
+  .rx-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 22px;margin-top:14px;box-shadow:var(--shadow);border-left:5px solid var(--green);}
+  .rx-card.mid{border-left-color:var(--gold);} .rx-card.low{border-left-color:var(--burgundy);}
+  .rx-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+  .rx-head .nm{font-family:'Noto Serif KR',serif;font-size:17px;font-weight:700;color:var(--green-deep);}
+  .rx-head .sc{margin-left:auto;font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--green-deep);}
+  .rx-card.mid .rx-head .sc{color:#a07520;} .rx-card.low .rx-head .sc{color:var(--burgundy);}
+  .rx-badge{font-size:11px;font-weight:700;padding:2px 10px;border-radius:100px;background:var(--green-soft);color:var(--green-deep);}
+  .rx-card.mid .rx-badge{background:var(--gold-soft);color:#8a6a20;} .rx-card.low .rx-badge{background:var(--burgundy-soft);color:var(--burgundy-deep);}
+  .rx-diag{font-size:13.5px;color:var(--ink-soft);margin-bottom:10px;}
+  .rx-list{list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .rx-list li{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:var(--ink);}
+  .rx-list li::before{content:'→';color:var(--burgundy);font-weight:700;flex-shrink:0;}
+  /* 로드맵 */
+  .cl-block{margin-top:16px;}
+  .cl-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .cl-head .n{width:32px;height:32px;border-radius:9px;background:var(--burgundy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;}
+  .cl-head .n.g{background:var(--gold);color:var(--green-deep);} .cl-head .n.gr{background:var(--green);} .cl-head .n.d{background:var(--green-deep);}
+  .cl-head .t{font-family:'Noto Serif KR',serif;font-size:16px;font-weight:700;color:var(--green-deep);}
+  .cl-head .when{font-size:12px;color:var(--muted);margin-left:auto;}
+  .cl-card{background:#fff;border:1px solid var(--line-soft);border-radius:14px;padding:6px;box-shadow:var(--shadow);}
+  .cl-line{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:10px;cursor:pointer;transition:.15s;}
+  .cl-line:hover{background:var(--cream);}
+  .cl-mark{width:20px;height:20px;border:2px solid var(--line);border-radius:6px;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:.2s;}
+  .cl-line.done .cl-mark{background:var(--green);border-color:var(--green);} .cl-line.done .cl-mark::after{content:'✓';color:#fff;font-size:13px;font-weight:700;}
+  .cl-line.done .cl-txt{text-decoration:line-through;color:var(--muted);}
+  .cl-txt{font-size:13.5px;color:var(--ink);line-height:1.5;} .cl-txt .tg{display:inline-block;font-size:10px;font-weight:700;padding:1px 7px;border-radius:100px;margin-right:7px;vertical-align:middle;}
+  .tg.ret{background:var(--green-soft);color:var(--green-deep);} .tg.ins{background:var(--gold-soft);color:#8a6a20;} .tg.hou{background:#dfeaf5;color:#345;} .tg.job{background:var(--cream-warm);color:var(--burgundy);} .tg.wel{background:var(--burgundy-soft);color:var(--burgundy-deep);}
+  .cl-empty{text-align:center;color:var(--muted);font-size:13px;padding:16px;}
+  /* 상담 */
+  .consult-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;}
+  .cs-card{border-radius:20px;padding:24px;color:#fff;position:relative;overflow:hidden;}
+  .cs-free{background:linear-gradient(135deg,var(--green-deep),#2a4a26);} .cs-paid{background:linear-gradient(135deg,var(--burgundy),var(--burgundy-deep));}
+  .cs-card h4{font-family:'Noto Serif KR',serif;font-size:18px;font-weight:700;margin-bottom:8px;}
+  .cs-card p{font-size:13px;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:16px;min-height:60px;}
+  .cs-btn{background:var(--gold);color:var(--green-deep);border:none;font-family:inherit;font-weight:700;font-size:14px;padding:12px 22px;border-radius:100px;cursor:pointer;width:100%;transition:.2s;}
+  .cs-paid .cs-btn{background:#fff;} .cs-btn:hover{transform:translateY(-2px);}
+  @media(max-width:720px){.consult-grid{grid-template-columns:1fr;}}
+  .disclaim{text-align:center;color:var(--muted);font-size:11px;line-height:1.7;margin-top:30px;padding-top:20px;border-top:1px solid var(--line);}
+  .disclaim b{font-family:'Noto Serif KR',serif;color:var(--green-deep);}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--green-deep);color:#fff;font-size:13px;font-weight:600;padding:11px 20px;border-radius:100px;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:.3s;z-index:200;max-width:90vw;}
+  .toast.show{opacity:1;transform:translate(-50%,0);} .toast.warn{background:var(--burgundy);}
+  .actions-row{text-align:center;margin-top:26px;}
+  @media(max-width:720px){
+    .intro h1{font-size:28px;}
+    .score-hero{padding:26px 20px;} .sh-grid{grid-template-columns:1fr;gap:22px;text-align:center;} .sh-tags{justify-content:center;}
+    .metric-grid,.radar-grid,.wi-sliders,.wi-result{grid-template-columns:1fr;}
+    .parts6{grid-template-columns:repeat(2,1fr);}
+    .cta{margin-top:-120px;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-inner">
+    <div class="logo"><div class="ko">2막 1장</div><div class="en">LIFE 2.0 · ACT II</div></div>
+    <div class="nav-badge">정밀진단 Ver.14 · 40문항</div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ===== 1) 소개 ===== -->
+  <section id="s-intro" class="screen active">
+    <div class="intro">
+      <span class="eyebrow gold">★ 은퇴 정밀진단</span>
+      <h1>막연한 노후를<br><em>40개의 질문</em>으로 선명하게</h1>
+      <p class="lede">자산·건강·주거·일자리·웰다잉 6개 파트를 진단해, 나만의 은퇴 점수와 자산 고갈 예측·What-if 시뮬레이션까지 담은 정밀 리포트를 만들어 드립니다.</p>
+      <p class="meta">⏱ 약 7분 · 📝 40문항 · 🔒 진단·상담 목적 보관</p>
+    </div>
+    <div class="card">
+      <div class="parts6">
+        <div class="p6"><span class="n">1</span>기본정보</div>
+        <div class="p6"><span class="n">2</span>건강·보험</div>
+        <div class="p6"><span class="n">3</span>주거·부동산</div>
+        <div class="p6"><span class="n">4</span>자산정보</div>
+        <div class="p6"><span class="n">5</span>일자리</div>
+        <div class="p6"><span class="n">6</span>웰다잉</div>
+      </div>
+      <div class="fg">
+        <label>연락처(휴대폰) <span style="color:var(--muted);font-weight:400;">· 결과·상담 연결용, 선택</span></label>
+        <input type="tel" id="uPhone" placeholder="010-0000-0000">
+      </div>
+      <div class="fg" style="margin-bottom:22px;">
+        <label class="consent"><input type="checkbox" id="uConsent"><span>입력 정보를 <strong>2막1장 진단·상담 목적</strong>으로 수집·이용하는 데 동의합니다.</span></label>
+      </div>
+      <button class="btn btn-primary" onclick="goTeaser()">2막1장 정밀진단 시작하기 →</button>
+    </div>
+  </section>
+
+  <!-- ===== 2) 예시 리포트 티저 ===== -->
+  <section id="s-teaser" class="screen">
+    <div class="t-intro">
+      <span class="eyebrow">★ 완성 리포트 미리보기</span>
+      <h2>끝까지 답하면, <em>이런 정밀 리포트</em>를 받습니다</h2>
+      <p>아래는 예시 화면입니다. 40문항을 마치면 나만의 숫자로 채워집니다.</p>
+      <div class="t-mock">※ 예시(가상 인물) · 실제 응답에 따라 결과가 달라집니다</div>
+    </div>
+    <div class="preview-frame">
+      <div id="teaserReport"></div>
+      <div class="fade"></div>
+    </div>
+    <div class="cta">
+      <div class="cta-card">
+        <h2>이제 <em>진짜 내 숫자</em>로<br>확인해볼까요?</h2>
+        <p>40개 문항에 답하면 위 리포트가 나만의 결과로 완성됩니다.</p>
+        <div class="cta-meta"><span>⏱ 약 7분</span><span>📝 40문항</span><span>🔒 안전 보관</span></div>
+        <button class="btn btn-primary" onclick="startQuiz()">네, 정밀진단 시작할게요 →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3) 문항 ===== -->
+  <section id="s-quiz" class="screen">
+    <div class="progress-wrap">
+      <div class="progress-top">
+        <div class="t">PART <strong id="pNow">1</strong> / 6 · <span id="pName2">기본 정보</span></div>
+        <div class="pct" id="pPct">0%</div>
+      </div>
+      <div class="bar"><i id="pFill" style="width:0%"></i></div>
+    </div>
+
+    <!-- 파트 도식 인트로 -->
+    <div id="partIntro"></div>
+
+    <!-- 파트 문항 -->
+    <div id="partBody" style="display:none;">
+      <div class="part-title" id="partTitle"></div>
+      <div id="qContainer"></div>
+      <div class="qnav">
+        <button class="btn btn-ghost" id="prevBtn" onclick="prevPart()" style="flex:0 0 120px;">← 이전</button>
+        <button class="btn btn-green" id="nextBtn" onclick="nextPart()">다음 →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4) 결과 리포트 ===== -->
+  <section id="s-report" class="screen">
+    <div id="realReport"></div>
+    <div class="disclaim">
+      <button class="op-reset" onclick="restart()">↻ 새 진단 시작 (진행자용)</button><br>
+      <b>2막 1장 · Life 2.0</b><br>
+      본 진단은 상담 전 자가진단용 보수적 추정 모델입니다. 국민연금·퇴직연금 등 일부 금액은 가정치이며, 실제 연금 수령액·세금·수익률·건강 변화에 따라 결과는 달라질 수 있습니다.<br>
+      나이·성별·상속 기대 등 바꾸기 어려운 조건은 점수에 직접 반영하지 않습니다. © 주식회사 라이프 2.0
+    </div>
+  </section>
+
+</div>
+
+<div id="saveStatus" class="toast"></div>
+
+<script>
+// ===================================================================
+//  ⚙️ 설정 (여기 세 곳만 채우면 됩니다)
+// ===================================================================
+// 1) 구글시트 저장 (8번 Apps Script 배포 후 URL/비밀키)
+const GAS_URL    = "https://script.google.com/macros/s/AKfycbzpkusUJi_tjYJ77r6VcwdSq4ijglH3d4Q7sNkuHj7fJoUWdxC5FkhQAgOe_cBcYsSzMw/exec";
+const GAS_SECRET = "life20!!";                 // 8번 스크립트의 SECRET과 똑같이
+// 2) 상담 버튼이 열 팔로업 설문(구글폼) 링크  ← 여기에 폼 링크를 붙여넣으면 상담 버튼이 자동 연결됩니다
+const FOLLOWUP_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfJlrEDaVHMe2k2s1jfVNmGFsy9FBfDfHzXH1wyujKBy8MT2w/viewform";                          // 예: "https://forms.gle/xxxxxxxx"
+// 3) 연금 가정치(만원/월) — 보수적 기본값. 실제 기준이 있으면 숫자만 바꾸세요.
+const NATIONAL_PENSION = 100;                          // 국민연금 가정치
+const RETPEN_BASE = { nat:0, ret:45, all:85, unknown:10 };  // 연금3총사 준비상태별 퇴직·개인연금 기본
+// ===================================================================
+
+// ================= 문항 데이터 (xlsx 배점로직) =================
+// area: 점수영역(asset/health/housing/job/well) · null=컨텍스트 · w:가중치 · cond:'home'(자가만)
+const PARTS = ['기본 정보','건강 · 보험','주거 · 부동산','자산 정보','일자리','웰다잉']; // 원래 파트번호(group) 기준 라벨
+// 표시 순서(step) → 원래 파트(group). 기본 → 자산(연금·65세 이후) → 일자리(소득 크레바스) → 주거(집) → 건강(방패) → 웰다잉
+const SEQ = [1, 4, 5, 3, 2, 6];
+function grpOf(step){ return SEQ[step-1]; }
+const Q = [
+ {id:'Q1',part:1,area:null,type:'text',q:'이름을 알려주세요',hint:'점수에 반영되지 않습니다'},
+ {id:'Q2',part:1,area:null,type:'single',q:'성별과 연령대를 알려주세요',opts:[
+   {t:'남성 40대 또는 40대 이하',age:45,g:'남',band:'40대'},{t:'남성 50대',age:55,g:'남',band:'50대'},{t:'남성 60대',age:64,g:'남',band:'60대'},
+   {t:'여성 40대 또는 40대 이하',age:45,g:'여',band:'40대'},{t:'여성 50대',age:55,g:'여',band:'50대'},{t:'여성 60대',age:64,g:'여',band:'60대'}]},
+ {id:'Q3',part:1,area:null,type:'single',q:'희망하는 은퇴 시기는 언제인가요?',opts:[
+   {t:'55세',retire:55},{t:'60세',retire:60},{t:'65세',retire:65},{t:'평생 현역',retire:70}]},
+ {id:'Q4',part:1,area:null,type:'single',q:'본인/부부 적정 노후 생활비 목표는?',opts:[
+   {t:'월 300만',cost:300},{t:'월 400만',cost:400},{t:'월 500만',cost:500}]},
+ {id:'Q5',part:1,area:null,type:'single',q:'경제적으로 부양해야 할 자녀가 있나요?',opts:[
+   {t:'없음 (1인가구 or 무자녀)',child:0},{t:'1명',child:3000},{t:'2명 이상',child:7000}]},
+ {id:'Q6',part:1,area:null,type:'single',q:'은퇴 준비를 가로막는 가장 큰 장애물은?',opts:[
+   {t:'자녀 교육/결혼 비용',tag:'자녀 교육/결혼 비용'},{t:'주택 대출 원리금',tag:'주택 대출'},{t:'소득 부족',tag:'소득 부족'},{t:'막연한 정보 부족',tag:'정보 부족'}]},
+
+ {id:'Q7',part:2,area:'health',w:3,type:'single',q:'주 3회 이상 규칙적인 운동을 하시나요?',opts:[{t:'전혀 하지 않음',s:20},{t:'가끔 걷기',s:60},{t:'꾸준히 운동',s:100}]},
+ {id:'Q8',part:2,area:'health',w:3,type:'single',q:'정기적으로 건강검진을 받으시나요?',opts:[{t:'받지 않음',s:20},{t:'가끔 받음 (2~3년 내 1회)',s:60},{t:'매년 받고 있음',s:100}]},
+ {id:'Q9',part:2,area:'health',w:2,type:'single',q:'정기 복용 중인 만성질환 약은 몇 개인가요?',opts:[{t:'없음',s:100},{t:'1~2개',s:60},{t:'3개 이상',s:20}]},
+ {id:'Q10',part:2,area:'health',w:3,type:'single',q:'최근 1년 내 입원·수술 이력이 있으신가요?',opts:[{t:'예',s:30,risk:'최근 1년 내 입원·수술 이력'},{t:'아니오',s:100}]},
+ {id:'Q11',part:2,area:'health',w:2,type:'single',q:'중대질환(암·치매 등) 가족력이 있으신가요?',opts:[{t:'예',s:40,risk:'중대질환 가족력'},{t:'아니오',s:100}]},
+ {id:'Q12',part:2,area:'health',w:4,type:'single',q:'의료비 방어 보험(실손/3대 진단비)이 준비돼 있나요?',opts:[{t:'완벽히 준비 됨',s:100},{t:'실손만 유지 중',s:60},{t:'부족함/미가입',s:20,risk:'의료비 방어 보험 부족'}]},
+ {id:'Q13',part:2,area:'health',w:3,type:'single',q:'장기 요양 보험(간병·치매 등)도 준비돼 있나요?',opts:[{t:'완벽히 준비 됨',s:100},{t:'필요성 느낌/알아보는 중',s:60},{t:'부족함/미가입',s:20}]},
+
+ {id:'Q14',part:3,area:'housing',w:4,type:'single',q:'현재 거주형태는?',opts:[{t:'자가 아파트',s:100,home:true},{t:'자가 단독/빌라',s:85,home:true},{t:'전월세',s:55,home:false},{t:'기타 (호텔 숙박 등)',s:25,home:false}]},
+ {id:'Q15',part:3,area:'housing',w:2,cond:'home',type:'single',q:'자가 주택의 대략적인 입지는?',opts:[{t:'서울 강남3구 및 용산',s:100},{t:'그 외 서울·수도권 핵심지',s:85},{t:'수도권 일반·주요 광역시',s:70},{t:'기타 지방 중소도시',s:55}]},
+ {id:'Q16',part:3,area:'housing',w:3,cond:'home',type:'single',q:'보유 부동산의 현재 시세는?',opts:[{t:'5억 미만',s:40,hp:60},{t:'5억~9억',s:65,hp:90},{t:'10억~14억',s:85,hp:130},{t:'15억 이상',s:100,hp:180}]},
+ {id:'Q17',part:3,area:'housing',w:4,cond:'home',type:'single',q:'부동산 대비 대출 비율(LTV)은?',opts:[{t:'없음',s:100},{t:'30% 미만',s:80},{t:'30~50%',s:55},{t:'50% 이상',s:25,risk:'주택담보 LTV 50% 이상'}]},
+ {id:'Q18',part:3,area:'housing',w:2,type:'single',q:'노후에 주거지를 이동할 계획이 있나요?',opts:[{t:'없음 현재유지',s:60},{t:'평수 축소',s:100},{t:'수도권 외곽·지방 이동',s:85},{t:'실버타운·시니어 레지던스',s:90}]},
+ {id:'Q19',part:3,area:'housing',w:3,cond:'home',type:'single',q:'주택연금 가입 생각이 있나요?',opts:[{t:'없음',s:40},{t:'가입예정',s:100},{t:'자금 부족 시 고려',s:70},{t:'주택연금을 잘 모름',s:30}]},
+ {id:'Q20',part:3,area:'housing',w:2,type:'single',q:'차량 유지·교체 계획은?',opts:[{t:'없음',s:90,car:0},{t:'대중교통 주력',s:100,car:5},{t:'경차/소형차 유지비 최소화',s:80,car:15},{t:'주기적 신차 교체/유지',s:20,car:35}]},
+
+ {id:'Q21',part:4,area:'asset',w:4,type:'single',q:'현금화 가능한 유동 자산 규모는?',opts:[{t:'5천만 미만',s:20,liq:2500},{t:'1~3억',s:60,liq:20000},{t:'3~5억',s:85,liq:40000},{t:'5억 이상',s:100,liq:70000}]},
+ {id:'Q22',part:4,area:'asset',w:3,type:'single',q:'매월 고정적으로 붓는 저축/투자금은?',opts:[{t:'없음',s:20,save:0},{t:'100만 미만',s:50,save:50},{t:'100~300만',s:80,save:200},{t:'300만 이상',s:100,save:350}]},
+ {id:'Q23',part:4,area:'asset',w:2,type:'single',q:'연금 절세 혜택(ISA·IRP 등) 활용 중인가요?',opts:[{t:'없음',s:20,tax:0},{t:'일부 활용 중',s:60,tax:10},{t:'한도까지 꽉 채움',s:100,tax:25}]},
+ {id:'Q24',part:4,area:'asset',w:2,type:'multi',agg:'sumbonus',q:'보유 주식/펀드 투자 성향은? (복수 선택)',opts:[{t:'국내 우량주 중심',s:25},{t:'미국 S&P500·나스닥 성장 ETF',s:25},{t:'SCHD·배당주 중심',s:30},{t:'안전 자산(예적금) 위주',s:20}]},
+ {id:'Q25',part:4,area:'asset',w:3,type:'single',q:'금융자산 월평균 배당/이자 소득은?',opts:[{t:'거의 없음',s:20,div:0},{t:'월 50만 미만',s:45,div:25},{t:'월 50~100만',s:75,div:75},{t:'월 100만 이상',s:100,div:120}]},
+ {id:'Q26',part:4,area:'asset',w:3,type:'single',q:'연금 3총사(국민/퇴직/개인) 준비 상태는?',opts:[{t:'국민연금만',s:35,pen:'nat'},{t:'퇴직연금 포함',s:70,pen:'ret'},{t:'3개 모두 준비',s:100,pen:'all'},{t:'잘 모르겠음',s:20,pen:'unknown',risk:'연금 준비 상태 미파악'}]},
+ {id:'Q27',part:4,area:'asset',w:2,type:'single',q:'현재 남아있는 부채(대출) 총액은?',opts:[{t:'없음',s:100,debt:0},{t:'1억 미만',s:75,debt:5000},{t:'1~3억',s:45,debt:20000},{t:'3억 이상',s:20,debt:40000,risk:'부채 3억 이상'}]},
+ {id:'Q28',part:4,area:'asset',w:1,type:'single',q:'매월 수입·지출 현금흐름 관리는?',opts:[{t:'가계부/앱으로 철저히 관리',s:100},{t:'대략적인 흐름만 파악',s:60},{t:'관리 안 함',s:20}]},
+ {id:'Q29',part:4,area:null,type:'single',q:'부모님으로부터 상속/증여 예상 자산은?',hint:'점수 미반영 · 시뮬레이션에만 사용',opts:[{t:'없음',inh:0},{t:'1억 미만',inh:5000},{t:'1~5억',inh:30000},{t:'5억 이상',inh:70000}]},
+
+ {id:'Q30',part:5,area:'job',w:3,type:'single',q:'은퇴 후 일자리의 가장 큰 목적은?',opts:[{t:'생계 유지',s:40},{t:'사회적 소속감',s:80},{t:'자아 실현',s:100}]},
+ {id:'Q31',part:5,area:'job',w:4,type:'single',q:'은퇴 후 희망 근로형태는?',opts:[{t:'주 5일 풀타임',s:60},{t:'주 2~3일 긱워커',s:100},{t:'재능기부/봉사',s:40}]},
+ {id:'Q32',part:5,area:'job',w:6,type:'single',q:'회사 직함 없이 내 기술로 돈 벌어본 경험이?',opts:[{t:'있다',s:100},{t:'없지만 할 수 있다',s:70},{t:'전혀 없다',s:20}]},
+ {id:'Q33',part:5,area:'job',w:4,type:'multi',agg:'max',q:'재취업/창업용 자격증을 보유하셨나요? (복수 선택 가능)',opts:[{t:'국가공인 자격증 보유',s:100},{t:'민간 자격증 보유',s:70},{t:'준비 중/예정',s:50},{t:'없음',s:20}]},
+ {id:'Q34',part:5,area:'job',w:3,type:'single',q:'새 직무를 위한 재교육 참여 의향은?',opts:[{t:'적극적',s:100},{t:'고민 중',s:60},{t:'생각 없음',s:20}]},
+
+ {id:'Q35',part:6,area:'well',w:5,type:'single',q:'사전 연명의료의향서 등록 생각이 있나요?',opts:[{t:'이미 등록',s:100},{t:'긍정적 검토',s:60},{t:'생각 없음',s:20}]},
+ {id:'Q36',part:6,area:'well',w:5,type:'single',q:'유언장·상속 준비가 돼 있나요?',opts:[{t:'완료',s:100},{t:'가족과 대화만',s:55},{t:'유산신탁 보험 가입',s:90},{t:'전혀 안함',s:20}]},
+ {id:'Q37',part:6,area:'well',w:4,type:'single',q:'장례 방식·상조 준비가 돼 있나요?',opts:[{t:'준비 완료',s:100},{t:'가족에게 맡김',s:55},{t:'준비 안됨',s:20}]},
+ {id:'Q38',part:6,area:'well',w:3,type:'single',q:'디지털 유산(아이디·비밀번호 등)을 정리했나요?',opts:[{t:'정리해둠',s:100},{t:'구두 전달',s:60},{t:'준비 안됨',s:20}]},
+ {id:'Q39',part:6,area:'well',w:3,type:'single',q:'장기기증 희망 등록을 하셨거나 고려 중인가요?',opts:[{t:'등록 완료',s:100},{t:'긍정적 고려',s:70},{t:'생각 없음',s:40}]},
+ {id:'Q40',part:6,area:null,type:'single',q:'내 삶의 마무리를 한 문장으로 정의한다면?',hint:'정답 없는 가치관 문항 · 점수 미반영',opts:[{t:'가족에게 짐이 되지 않는 삶',v:'가족 배려'},{t:'가진 것을 나누고 베푸는 삶',v:'나눔'},{t:'나를 위한 온전한 휴식',v:'휴식'}]},
+];
+
+const AREA_INFO = {
+  asset:{name:'자산구조',emoji:'💰'}, health:{name:'건강방어',emoji:'🛡️'},
+  housing:{name:'주거연장',emoji:'🏠'}, job:{name:'일자리역량',emoji:'💼'}, well:{name:'웰다잉준비',emoji:'🕯️'}
+};
+const AREA_ORDER = ['asset','health','housing','job','well'];
+
+// ================= 상태 =================
+let answers = {};      // {Q7:{idx,opt}, Q24:[idx...], Q1:text}
+let curPart = 1;
+
+// ================= 렌더 =================
+function renderPart(){
+  const g=grpOf(curPart);
+  const qs = Q.filter(q => q.part===g && !(q.cond==='home' && !isHome()));
+  document.getElementById('partTitle').textContent = 'PART '+curPart+'. '+PARTS[g-1];
+  document.getElementById('pNow').textContent = curPart;
+  document.getElementById('pName2').textContent = PARTS[g-1];
+  const pct = Math.round(((curPart-1)/6)*100);
+  document.getElementById('pPct').textContent = pct+'%';
+  document.getElementById('pFill').style.width = pct+'%';
+  document.getElementById('prevBtn').style.visibility = curPart===1?'hidden':'visible';
+  document.getElementById('nextBtn').textContent = curPart===6?'결과 리포트 보기 ✨':'다음 →';
+
+  let html='';
+  qs.forEach(q=>{
+    html += '<div class="qcard" data-qid="'+q.id+'"><div class="qq"><span class="qno">'+q.id+'</span>'+q.q+(q.hint?'<span class="qhint">'+q.hint+'</span>':'')+'</div>';
+    if(q.cond==='home') html += '<div class="cond-note">자가 주택 보유자만 응답합니다</div>';
+    if(q.type==='text'){
+      const v = answers[q.id]||'';
+      html += '<input class="qtext" type="text" value="'+v.replace(/"/g,'&quot;')+'" oninput="setText(\''+q.id+'\',this.value)" placeholder="성함을 입력하세요">';
+    } else if(q.type==='multi'){
+      const sel = answers[q.id]||[];
+      html += '<div class="opts">'+q.opts.map((o,i)=>'<div class="opt multi'+(sel.includes(i)?' sel':'')+'" onclick="toggleMulti(\''+q.id+'\','+i+')">'+o.t+'</div>').join('')+'</div>';
+    } else {
+      const sel = answers[q.id]!==undefined?answers[q.id].idx:-1;
+      const rowCls = (q.opts.length<=4 && q.opts.every(o=>o.t.length<=8))?' row':'';
+      html += '<div class="opts'+rowCls+'">'+q.opts.map((o,i)=>'<div class="opt'+(sel===i?' sel':'')+'" onclick="pick(\''+q.id+'\','+i+')">'+o.t+'</div>').join('')+'</div>';
+    }
+    html += '</div>';
+  });
+  document.getElementById('qContainer').innerHTML = html;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function isHome(){ const a=answers['Q14']; return a!==undefined && Q.find(q=>q.id==='Q14').opts[a.idx].home; }
+function pick(id,i){
+  const q=Q.find(x=>x.id===id); answers[id]={idx:i,opt:q.opts[i]};
+  if(id==='Q14'){ renderPart(); return; }   // 자가여부 변경 시 조건부 문항 갱신
+  const card=document.querySelector('.qcard[data-qid="'+id+'"]');
+  if(card)[...card.querySelectorAll('.opt')].forEach((el,idx)=>el.classList.toggle('sel', idx===i));
+}
+function toggleMulti(id,i){
+  let s=answers[id]||[]; if(s.includes(i)) s=s.filter(x=>x!==i); else s.push(i); answers[id]=s;
+  const card=document.querySelector('.qcard[data-qid="'+id+'"]');
+  if(card)[...card.querySelectorAll('.opt')].forEach((el,idx)=>el.classList.toggle('sel', s.includes(idx)));
+}
+function setText(id,v){ answers[id]=v; }
+
+function nextPart(){
+  // 필수 응답 검증 (컨텍스트/점수 단일문항)
+  const qs = Q.filter(q=>q.part===grpOf(curPart) && !(q.cond==='home' && !isHome()));
+  for(const q of qs){
+    if(q.type==='text'){ if(!answers[q.id]||!answers[q.id].trim()){ alert('성함을 입력해주세요.'); return; } }
+    else if(q.type==='multi'){ if(!(answers[q.id]&&answers[q.id].length)){ alert('하나 이상 선택해주세요: '+q.q); return; } }
+    else if(answers[q.id]===undefined){ alert('모든 문항에 답해주세요.'); return; }
+  }
+  if(curPart<6){ enterPart(curPart+1); }   // 다음 파트 도식 인트로부터
+  else { buildReport(); }
+}
+function prevPart(){ if(curPart>1){ curPart--; document.getElementById('partIntro').style.display='none'; document.getElementById('partBody').style.display='block'; renderPart(); } }
+
+// ================= 계산 엔진 =================
+function ctx(){
+  const g=id=>answers[id]?answers[id].opt:{};
+  const c={};
+  c.name = answers['Q1']||'고객';
+  c.baseAge = g('Q2').age||55; c.gender=g('Q2').g||''; c.band=g('Q2').band||'';
+  c.retire = g('Q3').retire||60;
+  c.cost = g('Q4').cost||400;
+  c.child = g('Q5').child||0;
+  c.obstacle = g('Q6').tag||'';
+  c.liquid = g('Q21').liq||0;
+  c.save = g('Q22').save||0;
+  c.tax = g('Q23').tax||0;
+  c.div = g('Q25').div||0;
+  c.pen = g('Q26').pen||'nat';
+  c.debt = g('Q27').debt||0;
+  c.inh = g('Q29').inh||0;
+  c.car = g('Q20').car||0;
+  c.home = isHome();
+  c.homeHp = g('Q16').hp||0; // 주택연금 잠재 월소득
+  return c;
+}
+function areaScore(area){
+  let num=0,den=0;
+  Q.filter(q=>q.area===area).forEach(q=>{
+    if(q.cond==='home' && !isHome()) return;
+    let raw;
+    if(q.type==='multi'){
+      const sel=answers[q.id]||[]; if(!sel.length) return;
+      if(q.agg==='max'){ raw=Math.max.apply(null, sel.map(i=>q.opts[i].s)); }   // 자격증: 최고 등급 반영
+      else { let sum=sel.reduce((a,i)=>a+q.opts[i].s,0); if(sel.length>=2) sum+=10; raw=Math.min(100,sum); } // 투자성향: 합+분산보너스
+    } else {
+      if(answers[q.id]===undefined) return; raw=q.opts[answers[q.id].idx].s;
+    }
+    num += raw*q.w; den += q.w;
+  });
+  return den? Math.round(num/den):0;
+}
+function grade(t){
+  if(t>=90)return['매우 안정형','든든합니다. 디테일만 다듬으면 완벽합니다.'];
+  if(t>=80)return['안정 성장형','좋은 궤도입니다. 성장 여력을 살리세요.'];
+  if(t>=70)return['균형 준비형','고르게 준비됐습니다. 약한 축을 보강하세요.'];
+  if(t>=60)return['성장 잠재형','기본기는 있으나 보완이 필요합니다.'];
+  if(t>=50)return['기초 보완형','지금부터 보완하면 충분히 달라집니다.'];
+  if(t>=40)return['위험 관리형','우선순위를 좁혀 첫 실행이 중요합니다.'];
+  return['긴급 재설계형','늦지 않았습니다. 핵심부터 다시 설계해요.'];
+}
+function computeReport(){
+  const c=ctx();
+  const scores={}; AREA_ORDER.forEach(a=>scores[a]=areaScore(a));
+  const total = Math.round(AREA_ORDER.reduce((s,a)=>s+scores[a],0)/AREA_ORDER.length);
+  // 예상 월소득 (가정치는 상단 설정에서 조정)
+  const national = NATIONAL_PENSION;
+  const retpen = (RETPEN_BASE[c.pen]||0) + c.tax;
+  const fixedIncome = national + retpen + c.div;
+  // 건강예비비
+  const hb = scores.health<50?40:(scores.health<75?25:10);
+  // 일자리지수 → 재취업 기본제안
+  const jobIdx = scores.job;
+  const reemp = jobIdx<40?0:(jobIdx<60?80:(jobIdx<80?150:220));
+  // 은퇴원금 / 월부족 / 고갈나이
+  const principal = c.liquid + Math.max(c.retire-c.baseAge,0)*12*c.save + c.inh - c.debt - c.child;
+  const shortfall = c.cost + hb + c.car - fixedIncome;
+  const depletion = shortfall<=0 ? Math.max(c.retire,90) : Math.round((c.retire + principal/(shortfall*12))*10)/10;
+  // 취약/리스크
+  const ranked = AREA_ORDER.map(a=>({a,s:scores[a]})).sort((x,y)=>x.s-y.s);
+  const risks=[];
+  Q.forEach(q=>{ if(answers[q.id]!==undefined && q.type!=='multi' && q.type!=='text'){ const o=q.opts[answers[q.id].idx]; if(o.risk) risks.push(o.risk); }});
+  return {c,scores,total,national,retpen,fixedIncome,hb,reemp,principal,shortfall,depletion,ranked,risks};
+}
+
+// ================= 리포트 렌더 =================
+const ACTION = {
+  asset:'부채·저축·연금저축(IRP/ISA)부터 정리해 자산 구조를 다지세요.',
+  health:'건강검진·실손/3대 진단비·장기요양 보험을 먼저 점검하세요.',
+  housing:'집·대출 구조와 주택연금 가능성을 먼저 살펴보세요.',
+  job:'재취업 가능한 기술·자격과 재교육 계획을 먼저 세우세요.',
+  well:'유언장·사전연명의료의향서·상속 정리부터 천천히 시작하세요.'
+};
+function money(v){ return (v>=10000?(v/10000).toFixed(v%10000?1:0)+'억':Math.round(v).toLocaleString()+'만'); }
+
+function reportHTML(R, sample){
+  const c=R.c, gr=grade(R.total);
+  const nm = sample?'홍길동':(c.name||'고객');
+  const pct = 2*Math.PI*74;
+  const legend = AREA_ORDER.map(a=>{const s=R.scores[a];const cls=s>=70?'':(s>=50?'mid':'low');return '<div class="lg-item '+cls+'"><span class="lg-name">'+AREA_INFO[a].emoji+' '+AREA_INFO[a].name+'</span><span class="lg-score">'+s+'<span style="font-size:11px;color:var(--muted);">점</span></span></div>';}).join('');
+  const w1=R.ranked[0], w2=R.ranked[1];
+  const depWarn = R.depletion<88;
+  return `
+    <div class="score-hero">
+      <div class="sh-grid">
+        <div>
+          <div class="sh-greet">2막1장 은퇴 정밀 리포트${sample?' · 예시':''}</div>
+          <div class="sh-name">${nm}님(${c.band||'50대'})의 <em>2막 1장 준비 점수</em></div>
+          <div class="sh-tags">
+            <span class="sh-tag gold">종합 ${R.total}점 · ${gr[0]}</span>
+            <span class="sh-tag">목표 은퇴 ${c.retire}세</span>
+            ${c.obstacle?'<span class="sh-tag">장애물: '+c.obstacle+'</span>':''}
+          </div>
+        </div>
+        <div>
+          <div class="ring"><svg viewBox="0 0 180 180"><circle class="bg2" cx="90" cy="90" r="74"></circle><circle class="fg2" cx="90" cy="90" r="74" stroke-dasharray="${R.total/100*pct} ${pct}"></circle></svg>
+            <div class="num"><div class="big">${R.total}</div><div class="unit">/ 100</div></div></div>
+          <div class="ring-grade">${gr[0]}</div><div class="ring-sub">${gr[1]}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="metric-grid">
+      <div class="mcard"><div class="ic g">💵</div><div class="lb">예상 월소득 (은퇴 후)</div><div class="vl">${R.fixedIncome}<span class="u">만원</span></div><div class="ds">국민연금 ${R.national} + 퇴직·개인 ${R.retpen} + 배당·이자 ${c.div}</div></div>
+      <div class="mcard"><div class="ic b">⏳</div><div class="lb">예상 자산 고갈 나이</div><div class="vl ${depWarn?'warn':''}">${R.depletion>=90?'90+':R.depletion}<span class="u">세</span></div><div class="ds">${R.shortfall<=0?'월 소득이 지출보다 커 안정적':'현재 조건 유지 시 추정'}</div></div>
+      <div class="mcard"><div class="ic">📉</div><div class="lb">은퇴 후 월 부족액</div><div class="vl ${R.shortfall>0?'warn':''}">${R.shortfall>0?'-'+R.shortfall:'+'+(-R.shortfall)}<span class="u">만원</span></div><div class="ds">목표 ${c.cost} + 건강예비 ${R.hb} + 차량 ${c.car} − 소득 ${R.fixedIncome}</div></div>
+    </div>
+
+    <div class="radar-card">
+      <span class="eyebrow">5대 핵심영역 종합진단</span>
+      <h2>당신의 <em>노후 준비 5각 지도</em></h2>
+      <div class="radar-grid">
+        <div><svg class="radar-svg" viewBox="0 0 320 300">${radarSVG(R.scores)}</svg></div>
+        <div class="legend">${legend}</div>
+      </div>
+    </div>
+
+    <div class="sec-block">
+      <h3>⚠️ 취약 포인트 & 권장 첫 액션</h3>
+      <div class="weak-row"><div class="weak-rank">1</div><div class="weak-txt"><b>${AREA_INFO[w1.a].name} (${w1.s}점)</b> — ${ACTION[w1.a]}</div></div>
+      <div class="weak-row"><div class="weak-rank two">2</div><div class="weak-txt"><b>${AREA_INFO[w2.a].name} (${w2.s}점)</b> — ${ACTION[w2.a]}</div></div>
+      ${R.risks.length?'<div class="weak-row"><div class="weak-rank" style="background:var(--burgundy-deep);">!</div><div class="weak-txt"><b>리스크 신호</b> — '+R.risks.slice(0,3).join(' · ')+'</div></div>':''}
+      <div class="weak-row"><div class="weak-rank ok">✓</div><div class="weak-txt"><b>권장 첫 액션</b> — ${ACTION[w1.a]}</div></div>
+    </div>
+
+    <div class="sec-block">
+      <h3>💰 예상 월소득 구성</h3>
+      <table class="income-table">
+        <tr><td>국민연금 <span style="color:var(--muted);font-size:12px;">(보수적 가정)</span></td><td>${R.national}만원</td></tr>
+        <tr><td>퇴직·개인연금</td><td>${R.retpen}만원</td></tr>
+        <tr><td>배당·이자소득</td><td>${c.div}만원</td></tr>
+        <tr class="tot"><td>고정 월소득 합계</td><td>${R.fixedIncome}만원</td></tr>
+      </table>
+    </div>`;
+}
+
+function whatifHTML(R){
+  const c=R.c;
+  return `
+    <div class="whatif">
+      <span class="eyebrow gold">What-if 시뮬레이션</span>
+      <h3>조건을 바꾸면 <em>노후가 얼마나 달라질까요?</em></h3>
+      <div class="wi-result">
+        <div class="wi-res-item"><div class="l">시나리오 예상 자산 고갈 나이</div><div class="v" id="wiDep">${R.depletion>=90?'90+':R.depletion}세</div></div>
+        <div class="wi-res-item"><div class="l">시나리오 월 부족액</div><div class="v small" id="wiShort">${R.shortfall>0?'-'+R.shortfall:'+'+(-R.shortfall)}만원</div></div>
+      </div>
+      <div class="wi-sliders">
+        <div class="wi-card"><div class="h"><span class="n">🧑‍💼 은퇴 후 재취업 월소득</span><span class="val"><span id="v-reemp">${R.reemp}</span>만</span></div>
+          <input type="range" id="s-reemp" min="0" max="300" step="10" value="${R.reemp}" oninput="runWhatif()"><div class="rng"><span>0</span><span>300만</span></div></div>
+        <div class="wi-card"><div class="h"><span class="n">📉 월 생활비 증감</span><span class="val"><span id="v-cost">0</span>만</span></div>
+          <input type="range" id="s-cost" min="-100" max="100" step="10" value="0" oninput="runWhatif()"><div class="rng"><span>-100</span><span>+100만</span></div></div>
+        <div class="wi-card"><div class="h"><span class="n">👨‍👩‍👧 자녀 지원금</span><span class="val"><span id="v-child">${c.child}</span>만</span></div>
+          <input type="range" id="s-child" min="0" max="10000" step="500" value="${c.child}" oninput="runWhatif()"><div class="rng"><span>0</span><span>1억</span></div></div>
+        <div class="wi-card"><div class="h"><span class="n">🏦 주담대 금리</span><span class="val"><span id="v-rate">4</span>%</span></div>
+          <input type="range" id="s-rate" min="2" max="7" step="0.5" value="4" oninput="runWhatif()"><div class="rng"><span>2%</span><span>7%</span></div></div>
+        <div class="wi-card" style="grid-column:1/-1;"><div class="h"><span class="n">🏠 주택연금 활용 ${c.home?'':'(자가 아니면 효과 없음)'}</span><span class="val" id="v-hp">${c.home?'미활용':'해당없음'}</span></div>
+          <div class="wi-toggle"><button id="hp-off" class="on" onclick="setHp(0)">미활용</button><button id="hp-on" onclick="setHp(1)" ${c.home?'':'disabled style=opacity:.4'}>활용 (+월 ${c.homeHp}만)</button></div></div>
+      </div>
+    </div>`;
+}
+let _R=null, _hp=0;
+function setHp(v){ if(!_R.c.home) return; _hp=v; document.getElementById('hp-on').classList.toggle('on',v===1); document.getElementById('hp-off').classList.toggle('on',v===0); runWhatif(); }
+function runWhatif(){
+  const c=_R.c;
+  const reemp=+val('s-reemp'), dcost=+val('s-cost'), child=+val('s-child'), rate=+val('s-rate');
+  document.getElementById('v-reemp').textContent=reemp; document.getElementById('v-cost').textContent=(dcost>0?'+':'')+dcost;
+  document.getElementById('v-child').textContent=child; document.getElementById('v-rate').textContent=rate;
+  document.getElementById('v-hp').textContent = c.home?(_hp?'활용 중':'미활용'):'해당없음';
+  const hpInc = (c.home&&_hp)?c.homeHp:0;
+  const fixed = _R.fixedIncome + reemp + hpInc;
+  const cost = c.cost + dcost;
+  const rateEffect = (rate-4)/100*c.debt/12;
+  const shortfall = Math.round(cost + _R.hb + c.car - fixed + rateEffect);
+  const principal = c.liquid + Math.max(c.retire-c.baseAge,0)*12*c.save + c.inh - c.debt - child;
+  const dep = shortfall<=0 ? Math.max(c.retire,90) : Math.round((c.retire + principal/(shortfall*12))*10)/10;
+  document.getElementById('wiDep').textContent = (dep>=90?'90+':dep)+'세';
+  document.getElementById('wiShort').textContent = (shortfall>0?'-'+shortfall:'+'+(-shortfall))+'만원';
+}
+function val(id){ return document.getElementById(id).value; }
+
+function radarSVG(scores){
+  const cx=160,cy=150,R=100,order=AREA_ORDER,n=5;
+  const ang=order.map((_,i)=>(-Math.PI/2)+i*2*Math.PI/n);
+  let s='';
+  [0.25,0.5,0.75,1].forEach(lv=>{ s+='<polygon class="r-grid" points="'+ang.map(a=>(cx+R*lv*Math.cos(a))+','+(cy+R*lv*Math.sin(a))).join(' ')+'"/>'; });
+  ang.forEach(a=>{ s+='<line class="r-axis" x1="'+cx+'" y1="'+cy+'" x2="'+(cx+R*Math.cos(a))+'" y2="'+(cy+R*Math.sin(a))+'"/>'; });
+  s+='<polygon class="r-fill" points="'+order.map((a,i)=>{const v=scores[a]/100;return (cx+R*v*Math.cos(ang[i]))+','+(cy+R*v*Math.sin(ang[i]));}).join(' ')+'"/>';
+  order.forEach((a,i)=>{const v=scores[a]/100;s+='<circle class="r-dot" cx="'+(cx+R*v*Math.cos(ang[i]))+'" cy="'+(cy+R*v*Math.sin(ang[i]))+'" r="4.5"/>';});
+  order.forEach((a,i)=>{const lx=cx+(R+24)*Math.cos(ang[i]),ly=cy+(R+24)*Math.sin(ang[i])+4;const anc=Math.abs(Math.cos(ang[i]))<0.1?'middle':(Math.cos(ang[i])>0?'start':'end');s+='<text class="r-axis-label" x="'+lx+'" y="'+ly+'" text-anchor="'+anc+'">'+AREA_INFO[a].name+'</text>';});
+  return s;
+}
+
+// ================= 화면 전환 =================
+function show(id){ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active')); document.getElementById(id).classList.add('active'); window.scrollTo({top:0,behavior:'smooth'}); }
+function goTeaser(){
+  if(!document.getElementById('uConsent').checked){ if(!confirm('개인정보 수집에 동의하지 않으면 결과 저장 없이 진행됩니다. 계속할까요?')) return; }
+  document.getElementById('teaserReport').innerHTML = reportHTML(SAMPLE_R, true);
+  show('s-teaser');
+}
+function startQuiz(){ enterPart(1); show('s-quiz'); }
+function enterPart(p){
+  curPart=p; const g=grpOf(p);
+  const pct=Math.round(((p-1)/6)*100);
+  document.getElementById('pNow').textContent=p;
+  document.getElementById('pName2').textContent=PARTS[g-1];
+  document.getElementById('pPct').textContent=pct+'%';
+  document.getElementById('pFill').style.width=pct+'%';
+  document.getElementById('partIntro').innerHTML=partIntroHTML(p,g);
+  document.getElementById('partIntro').style.display='block';
+  document.getElementById('partBody').style.display='none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function beginPart(){
+  document.getElementById('partIntro').style.display='none';
+  document.getElementById('partBody').style.display='block';
+  renderPart();
+}
+
+// ===== 파트별 도식(그림) 인트로 =====
+function partIntroHTML(step,g){
+  const PI=[
+    {t:`지금부터 그리는 <em>나의 후반전 지도</em>`, svg:svgTimeline(),
+     msg:`오늘부터 <b>은퇴 → 65세 연금 개시 → 마무리</b>까지, 다섯 개의 축을 함께 그려봅니다.`,
+     hint:`이 파트에서 진단할 것 — 기본 정보(나이·목표 은퇴·생활비 등)`},
+    {t:`큰 병이 오기 전에, <em>방패</em>부터`, svg:svgShield(),
+     msg:`연금 받기 전 <b>암·뇌혈관·심혈관</b> 같은 큰 병이 오면, <b>진단비·수술·치료비</b>가 노후 자금을 지킵니다.`,
+     hint:`이 파트에서 진단할 것 — 운동·검진·의료비/장기요양 보험`},
+    {t:`살고 있는 집이 <em>매달 연금</em>으로`, svg:svgHouse(),
+     msg:`자가 주택은 <b>주택연금</b>으로 매달 소득이 될 수 있는, 노후의 큰 카드입니다.`,
+     hint:`이 파트에서 진단할 것 — 거주형태·시세·대출(LTV)·주택연금`},
+    {t:`65세 이후, <em>3층 연금</em>이 바닥이 됩니다`, svg:svgPension(),
+     msg:`<b>국민·퇴직·개인연금</b> 3층이 탄탄할수록, 65세 이후 평생 소득의 바닥이 든든해집니다.`,
+     hint:`이 파트에서 진단할 것 — 유동자산·저축·연금·부채·현금흐름`},
+    {t:`은퇴와 연금 사이, <em>소득 공백</em>을 잇다`, svg:svgCrevasse(),
+     msg:`은퇴부터 연금 개시까지의 <b>'소득 공백기(크레바스)'</b>, 일과 재취업이 그 다리를 놓습니다.`,
+     hint:`이 파트에서 진단할 것 — 일의 목적·근로형태·기술·자격·재교육`},
+    {t:`삶의 마무리는 <em>내가 미리</em> 정합니다`, svg:svgWell(),
+     msg:`사전연명의료의향서·유언·상조·디지털 유산 — <b>남이 아닌 내가</b> 미리 챙기는 준비입니다.`,
+     hint:`이 파트에서 진단할 것 — 웰다잉 준비 5가지`}
+  ];
+  const d=PI[g-1];
+  return `<div class="pintro"><span class="eyebrow">PART ${step} · ${PARTS[g-1]}</span>
+    <h2 class="pi-title">${d.t}</h2>
+    <div class="pi-diagram">${d.svg}</div>
+    <div class="pi-msg">${d.msg}</div>
+    <div class="pi-hint">${d.hint}</div>
+    <button class="btn btn-primary pi-btn" onclick="beginPart()">이 파트 답하기 →</button></div>`;
+}
+function svgTimeline(){
+  const M=[[70,'#4a7c3a','지금','오늘'],[190,'#c9a449','은퇴','근로 끝'],[320,'#3d6830','연금','65세'],[450,'#6ba055','여생',''],[545,'#6b2c3e','마무리','']];
+  const m=M.map(x=>`<circle cx="${x[0]}" cy="120" r="9" fill="${x[1]}" stroke="#fff" stroke-width="3"/><text x="${x[0]}" y="150" text-anchor="middle" font-size="13" class="svg-lbl">${x[2]}</text><text x="${x[0]}" y="168" text-anchor="middle" font-size="11" class="svg-sub">${x[3]}</text>`).join('');
+  return `<svg viewBox="0 0 600 185"><line x1="70" y1="120" x2="545" y2="120" stroke="#e6dfd0" stroke-width="6" stroke-linecap="round"/><line x1="70" y1="120" x2="190" y2="120" stroke="#c9a449" stroke-width="6" stroke-linecap="round"/><line x1="320" y1="120" x2="545" y2="120" stroke="#4a7c3a" stroke-width="6" stroke-linecap="round"/><rect x="205" y="117" width="100" height="6" fill="#6b2c3e" opacity=".3"/><text x="255" y="108" text-anchor="middle" font-size="11" fill="#6b2c3e" font-weight="700">소득 공백</text><text x="130" y="94" text-anchor="middle" font-size="11" class="svg-sub">근로소득</text><text x="432" y="94" text-anchor="middle" font-size="11" class="svg-sub">연금·자산소득</text>${m}</svg>`;
+}
+function svgShield(){
+  const chips=[[110,'암'],[300,'뇌혈관'],[490,'심혈관']];
+  const c=chips.map(x=>`<rect x="${x[0]-50}" y="22" width="100" height="34" rx="17" fill="#f0d8de" stroke="#6b2c3e" stroke-width="1.5"/><text x="${x[0]}" y="44" text-anchor="middle" font-size="14" fill="#521f2f" font-weight="700">${x[1]}</text>`).join('');
+  const tgt=[[110,275],[300,300],[490,325]];
+  const arr=tgt.map(a=>`<line x1="${a[0]}" y1="58" x2="${a[1]}" y2="106" stroke="#6b2c3e" stroke-width="2" stroke-dasharray="4 4" opacity=".55"/>`).join('');
+  return `<svg viewBox="0 0 600 210">${c}${arr}<path d="M300 96 L348 114 L348 156 Q348 190 300 202 Q252 190 252 156 L252 114 Z" fill="#4a7c3a"/><text x="300" y="142" text-anchor="middle" font-size="15" fill="#fff" font-weight="700">진단비</text><text x="300" y="164" text-anchor="middle" font-size="12" fill="#eaf3e2">수술·치료비</text></svg>`;
+}
+function svgHouse(){
+  const coins=[420,472,524].map(x=>`<circle cx="${x}" cy="120" r="22" fill="#f0e0b8" stroke="#c9a449" stroke-width="2"/><text x="${x}" y="127" text-anchor="middle" font-size="17" fill="#8a6a20" font-weight="700">₩</text>`).join('');
+  return `<svg viewBox="0 0 600 190"><polygon points="95,92 150,52 205,92" fill="#6b2c3e"/><rect x="108" y="92" width="84" height="66" fill="#4a7c3a"/><rect x="136" y="118" width="28" height="40" fill="#faf6ee"/><text x="150" y="176" text-anchor="middle" font-size="12" class="svg-lbl">자가주택</text><line x1="232" y1="120" x2="330" y2="120" stroke="#c9a449" stroke-width="5"/><polygon points="330,110 356,120 330,130" fill="#c9a449"/><text x="292" y="107" text-anchor="middle" font-size="12" fill="#8a6a20" font-weight="700">주택연금</text>${coins}<text x="472" y="168" text-anchor="middle" font-size="12" class="svg-lbl">매달 지급</text></svg>`;
+}
+function svgPension(){
+  return `<svg viewBox="0 0 600 212"><rect x="210" y="150" width="180" height="34" rx="4" fill="#3d6830"/><text x="300" y="172" text-anchor="middle" font-size="13" fill="#fff" font-weight="700">1층 · 국민연금</text><rect x="228" y="114" width="144" height="34" rx="4" fill="#4a7c3a"/><text x="300" y="136" text-anchor="middle" font-size="13" fill="#fff" font-weight="700">2층 · 퇴직연금</text><rect x="246" y="78" width="108" height="34" rx="4" fill="#c9a449"/><text x="300" y="100" text-anchor="middle" font-size="13" fill="#3d6830" font-weight="700">3층 · 개인연금</text><text x="300" y="66" text-anchor="middle" font-size="13" fill="#6b2c3e" font-weight="700">65세 ~ 평생 소득</text><line x1="180" y1="192" x2="420" y2="192" stroke="#8a8a92" stroke-width="2" stroke-dasharray="5 5"/><text x="300" y="206" text-anchor="middle" font-size="11" class="svg-sub">소득의 바닥</text></svg>`;
+}
+function svgCrevasse(){
+  return `<svg viewBox="0 0 600 205"><rect x="40" y="120" width="185" height="72" fill="#d8e6cf"/><rect x="375" y="120" width="185" height="72" fill="#d8e6cf"/><text x="132" y="150" text-anchor="middle" font-size="13" class="svg-lbl">은퇴</text><text x="132" y="170" text-anchor="middle" font-size="11" class="svg-sub">약 60세</text><text x="467" y="150" text-anchor="middle" font-size="13" class="svg-lbl">연금 개시</text><text x="467" y="170" text-anchor="middle" font-size="11" class="svg-sub">65세~</text><rect x="205" y="104" width="190" height="14" rx="7" fill="#c9a449"/><text x="300" y="96" text-anchor="middle" font-size="13" fill="#8a6a20" font-weight="700">일 · 재취업</text><circle cx="300" cy="111" r="7" fill="#6b2c3e"/><text x="300" y="165" text-anchor="middle" font-size="12" fill="#6b2c3e" font-weight="700">소득 0 구간</text><text x="300" y="184" text-anchor="middle" font-size="11" class="svg-sub">(크레바스)</text></svg>`;
+}
+function svgWell(){
+  const cards=[[250,40,'사전연명의료의향서'],[250,108,'장례 · 상조'],[432,40,'유언 · 상속'],[432,108,'디지털 유산']];
+  const c=cards.map(x=>`<rect x="${x[0]}" y="${x[1]}" width="150" height="52" rx="12" fill="#fff" stroke="#4a7c3a" stroke-width="1.5"/><circle cx="${x[0]+21}" cy="${x[1]+26}" r="11" fill="#4a7c3a"/><text x="${x[0]+21}" y="${x[1]+30}" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">✓</text><text x="${x[0]+38}" y="${x[1]+31}" font-size="11.5" fill="#3d6830" font-weight="700">${x[2]}</text>`).join('');
+  const candle=`<rect x="120" y="95" width="26" height="70" rx="4" fill="#f0e0b8" stroke="#c9a449" stroke-width="1.5"/><ellipse cx="133" cy="88" rx="7" ry="12" fill="#c9a449"/><text x="133" y="182" text-anchor="middle" font-size="12" class="svg-lbl">나</text>`;
+  return `<svg viewBox="0 0 600 190">${candle}<line x1="160" y1="120" x2="248" y2="90" stroke="#c9a449" stroke-width="2" stroke-dasharray="4 4"/><line x1="160" y1="120" x2="248" y2="158" stroke="#c9a449" stroke-width="2" stroke-dasharray="4 4"/>${c}</svg>`;
+}
+// ===== 상세 리포트(탭): 영역별 처방 / 실행 로드맵 / What-if / 상담 =====
+function sel1(id){ return (answers[id]!==undefined && !Array.isArray(answers[id]) && typeof answers[id]==='object') ? answers[id].idx : -1; }
+function selM(id){ return Array.isArray(answers[id]) ? answers[id] : []; }
+
+function areaAdvice(area,R){
+  const c=R.c; const b=[]; let diag='';
+  const s=R.scores[area];
+  const band = s>=70?'양호한 편입니다. 유지·최적화가 핵심입니다.':(s>=50?'보통 수준입니다. 한두 가지만 보완하면 크게 좋아집니다.':'가장 먼저 손봐야 할 취약 영역입니다.');
+  if(area==='health'){
+    diag='건강은 노후 최대 지출 변수입니다. '+band;
+    if(sel1('Q12')===2) b.push('실손·3대 진단비가 부족/미가입 — 3개사 이상 견적 비교 후 우선 보강');
+    if(sel1('Q13')===2) b.push('장기요양(간병·치매) 보장 검토 — 노후 최대 리스크 대비');
+    if(sel1('Q7')===0) b.push('주 3회 걷기부터 — 가장 쉬운 예방 투자');
+    if(sel1('Q8')===0) b.push('올해 건강검진 예약 — 조기 발견이 의료비를 줄입니다');
+    if(sel1('Q10')===0||sel1('Q11')===0) b.push('최근 이력·가족력을 반영해 진단비 보장 범위 재점검');
+    if(!b.length) b.push('현 보장 수준 유지 + 갱신 시점마다 보장 점검');
+  } else if(area==='asset'){
+    diag='자산 구조는 노후 자금이 얼마나 오래 버티는지를 결정합니다. '+band;
+    if(sel1('Q26')===0||sel1('Q26')===3) b.push('연금저축·IRP 개설로 3층 연금 완성(국민+퇴직+개인)');
+    if(sel1('Q23')===0||sel1('Q23')===1) b.push('ISA·IRP 세액공제 한도까지 활용 — 정부가 주는 확정 환급');
+    if(sel1('Q27')>=2) b.push('고금리 부채부터 우선 상환 계획 수립');
+    if(sel1('Q22')===0) b.push('월 자동이체로 적립 습관 시작(소액이라도)');
+    if(sel1('Q25')===0) b.push('배당·이자 등 현금흐름형 자산 비중 확대');
+    if(sel1('Q28')===2) b.push('가계부 앱으로 월 현금흐름 관리 시작');
+    if(!b.length) b.push('자산 구조 양호 — 절세계좌 중심 리밸런싱으로 최적화');
+  } else if(area==='housing'){
+    diag='주거는 가장 큰 자산이자 노후 현금의 마지막 카드입니다. '+band;
+    if(!c.home) b.push('전월세 — 주거 안정·주택연금 활용이 제한적, 유동자산 완충을 더 두텁게');
+    if(sel1('Q17')>=2) b.push('LTV가 높습니다 — 상환·대환으로 이자부담 관리');
+    if([1,2].includes(sel1('Q19'))) b.push('주택연금 시뮬레이션으로 은퇴 후 월소득 확보');
+    if(sel1('Q19')===3) b.push('주택연금 개념부터 안내 필요 — 잠재 월소득이 큰 카드');
+    if(sel1('Q18')===1) b.push('평수 축소(다운사이징)로 생활비·현금 동시 확보');
+    if(sel1('Q20')===3) b.push('차량 유지비 절감 검토 — 고정지출 다이어트');
+    if(!b.length) b.push('주거 기반 안정 — 현 전략 유지 + 주택연금 여력 점검');
+  } else if(area==='job'){
+    diag='은퇴 후에도 버는 힘은 자산 고갈을 늦추는 가장 강력한 지렛대입니다. '+band;
+    if(sel1('Q32')===2) b.push('직함 없이 버는 경험 축적 — 소규모 부업/프로젝트로 시작');
+    if(selM('Q33').includes(3)||(selM('Q33').includes(2)&&!selM('Q33').includes(0))) b.push('국가공인 자격 취득 로드맵 설계');
+    if(sel1('Q34')===2) b.push('재교육 의향이 낮음 — 관심 직무부터 짧은 강좌로 진입');
+    if(sel1('Q34')===0) b.push('국비 재교육/직업훈련 과정 등록');
+    if(sel1('Q31')===0) b.push('주5일 풀타임보다 주2~3일 긱워커 등 지속가능 형태 설계');
+    if(!b.length) b.push('일 역량 양호 — 수익화 채널 다각화');
+  } else {
+    diag='웰다잉 준비는 가족과 나 모두의 부담을 줄이는 마지막 배려입니다. '+band;
+    if(sel1('Q35')!==0&&sel1('Q35')!==-1) b.push('보건소 사전연명의료의향서 등록(무료·15분)');
+    if(sel1('Q36')===1||sel1('Q36')===3) b.push('유언장 초안 작성 + 상속 구조 정리');
+    if(sel1('Q37')===2) b.push('상조(선수금 100% 보전) 업체 2~3곳 비교');
+    if(sel1('Q38')===2) b.push('디지털 유산(아이디·비밀번호) 목록 정리 후 안전 보관');
+    if(!b.length) b.push('웰다잉 준비 양호 — 연 1회 갱신·가족 공유');
+  }
+  return {diag,bullets:b};
+}
+
+function roadmap(R){
+  const c=R.c; const T=[],W=[],M=[],Y=[];
+  const has=(id,i)=>sel1(id)===i, hasM=(id,i)=>selM(id).includes(i);
+  if(sel1('Q26')===0||sel1('Q26')===3){ T.push(['ret','국민연금공단 앱에서 예상 수령액 조회·저장']); if(sel1('Q23')===0) T.push(['ret','증권사 앱에서 연금저축펀드 비대면 개설(10분)']); }
+  if(has('Q28',2)) T.push(['ret','가계부 앱 설치 → 월 고정지출부터 기록']);
+  if(has('Q12',2)||has('Q13',2)) T.push(['ins',"'내보험 다보여'로 보유 보험 통합 조회(무료)"]);
+  if(sel1('Q23')<=1&&sel1('Q23')!==-1) W.push(['ret','ISA·IRP 개설 또는 납입 증액(세액공제)']);
+  if(has('Q12',2)) W.push(['ins','실손·3대 진단비 3개사 견적 비교']);
+  if(has('Q13',2)) W.push(['ins','장기요양(간병) 보험 상담']);
+  if(has('Q7',0)) W.push(['ins','주 3회 걷기 루틴 시작']);
+  if(has('Q8',0)) W.push(['ins','건강검진 예약']);
+  if(hasM('Q33',3)||hasM('Q33',2)) W.push(['job','재취업 목표 직무의 자격·교육 과정 조사']);
+  if(sel1('Q35')!==0&&sel1('Q35')!==-1) W.push(['wel','보건소 사전연명의료의향서 안내 확인']);
+  if([1,2].includes(sel1('Q19'))&&c.home) M.push(['hou','주택연금 시뮬레이션(한국주택금융공사)']);
+  if(sel1('Q17')>=2) M.push(['hou','주담대 상환·대환 계획 수립']);
+  if(sel1('Q27')>=2) M.push(['ret','고금리 부채 우선 상환 플랜']);
+  if(has('Q22',0)) M.push(['ret','월 자동이체 적립 시작(소액이라도)']);
+  if(has('Q37',2)) M.push(['wel','상조 선수금 100% 업체 비교·가입']);
+  if(has('Q36',1)||has('Q36',3)) M.push(['wel','유언장 초안 작성']);
+  if(has('Q34',0)) M.push(['job','국비 재교육/직업훈련 과정 등록']);
+  Y.push(['ret','퇴직금은 이직 시 반드시 IRP로 이전(세금 절감)']);
+  if(has('Q38',2)) Y.push(['wel','디지털 유산 목록 정리 + 가족 1인에게 위치 공유']);
+  if(has('Q32',2)) Y.push(['job','소규모 부업/프로젝트로 실전 수익 경험']);
+  if(c.inh>0||sel1('Q36')>=0) Y.push(['wel','상속·증여 전략 전문가 상담']);
+  if(c.home) Y.push(['ret','포트폴리오 연 1회 리밸런싱']);
+  return {T,W,M,Y};
+}
+
+function clList(items){
+  if(!items.length) return '<div class="cl-empty">이 시점에 특별히 급한 항목은 없습니다. 잘 준비돼 있어요 👍</div>';
+  return '<div class="cl-card">'+items.map(it=>'<div class="cl-line" onclick="this.classList.toggle(\'done\')"><div class="cl-mark"></div><div class="cl-txt"><span class="tg '+it[0]+'">'+({ret:'자산',ins:'건강·보험',hou:'주거',job:'일자리',wel:'웰다잉'}[it[0]])+'</span>'+it[1]+'</div></div>').join('')+'</div>';
+}
+
+function detailTabsHTML(R){
+  const rx = AREA_ORDER.slice().sort((x,y)=>R.scores[x]-R.scores[y]).map(a=>{   // 취약 영역이 위로
+    const s=R.scores[a], cls=s>=70?'':(s>=50?'mid':'low'), badge=s>=70?'양호':(s>=50?'보통':'취약');
+    const adv=areaAdvice(a,R);
+    return `<div class="rx-card ${cls}"><div class="rx-head"><span class="nm">${AREA_INFO[a].emoji} ${AREA_INFO[a].name}</span><span class="rx-badge">${badge}</span><span class="sc">${s}<span style="font-size:12px;color:var(--muted);">점</span></span></div>
+      <div class="rx-diag">${adv.diag}</div><ul class="rx-list">${adv.bullets.map(x=>'<li>'+x+'</li>').join('')}</ul></div>`;
+  }).join('');
+  const rd=roadmap(R);
+  return `
+   <div id="detailWrap" style="display:none;">
+    <div class="tabs">
+      <button class="tab active" onclick="tab(event,'t-rx')">🎯 영역별 처방</button>
+      <button class="tab" onclick="tab(event,'t-road')">✅ 실행 로드맵</button>
+      <button class="tab" onclick="tab(event,'t-wi')">🔮 What-if 시뮬</button>
+    </div>
+    <div id="t-rx" class="panel active"><div class="sec-block" style="margin-top:14px;"><h3>영역별 정밀 처방</h3><p style="font-size:13px;color:var(--ink-soft);margin-top:-6px;">5개 영역을 점수순으로, 당신의 답변에 맞춘 조치를 정리했습니다.</p></div>${rx}</div>
+    <div id="t-road" class="panel">
+      <div class="cl-block"><div class="cl-head"><div class="n">I</div><div class="t">오늘 안에 (30분)</div><div class="when">Today</div></div>${clList(rd.T)}</div>
+      <div class="cl-block"><div class="cl-head"><div class="n g">II</div><div class="t">이번 주 안에</div><div class="when">This Week</div></div>${clList(rd.W)}</div>
+      <div class="cl-block"><div class="cl-head"><div class="n gr">III</div><div class="t">이번 달 안에</div><div class="when">This Month</div></div>${clList(rd.M)}</div>
+      <div class="cl-block"><div class="cl-head"><div class="n d">IV</div><div class="t">3개월~1년</div><div class="when">3–12 months</div></div>${clList(rd.Y)}</div>
+    </div>
+    <div id="t-wi" class="panel">${whatifHTML(R)}</div>
+
+    <div class="sec-block consult-sec" style="margin-top:18px;">
+      <span class="eyebrow gold">상담 연결</span>
+      <h3 style="font-family:'Noto Serif KR',serif;font-size:19px;color:var(--green-deep);font-weight:700;margin:6px 0 4px;">설문을 마치셨다면, <em>라이프이점영 무료 상담</em>으로 이어집니다</h3>
+      <p style="font-size:13px;color:var(--ink-soft);margin-bottom:14px;">진단 결과를 바탕으로 담당 플래너가 1:1로 도와드립니다.</p>
+      <div class="consult-grid">
+        <div class="cs-card cs-free"><h4>🤝 라이프이점영 무료 상담</h4><p>연금·보험·웰다잉 분야를 은퇴설계 전문가가 무료로 점검해 드립니다.</p><button class="cs-btn" onclick="consult('free')">무료 상담 신청 →</button></div>
+        <div class="cs-card cs-paid"><h4>📋 외부 전문가(유료)</h4><p>상속·증여 세무, 부동산·주택연금, 법률·유언 등 검증된 전문가와 연결.</p><button class="cs-btn" onclick="consult('paid')">외부 전문가 보기 →</button></div>
+      </div>
+    </div>
+   </div>`;
+}
+function tab(e,id){
+  document.querySelectorAll('#realReport .tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('#realReport .panel').forEach(p=>p.classList.remove('active'));
+  e.currentTarget.classList.add('active'); document.getElementById(id).classList.add('active');
+  window.scrollTo({top:document.querySelector('#realReport .tabs').offsetTop-80,behavior:'smooth'});
+}
+function consult(kind){
+  if(FOLLOWUP_FORM_URL && FOLLOWUP_FORM_URL.indexOf('http')===0){
+    const sep=FOLLOWUP_FORM_URL.indexOf('?')<0?'?':'&';
+    window.open(FOLLOWUP_FORM_URL+sep+'type='+kind,'_blank'); return;
+  }
+  alert((kind==='free'?'무료 상담':'외부 전문가 매칭')+' 신청 화면으로 연결됩니다.\n\n[연동] 코드 상단 FOLLOWUP_FORM_URL 에 팔로업 설문(구글폼) 링크를 넣으면 이 버튼이 자동으로 열립니다.');
+}
+
+function genCode(){ var d=new Date(); return 'L2P-'+(d.getFullYear()+'').slice(2)+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')+'-'+Math.random().toString(36).slice(2,5).toUpperCase(); }
+
+function surveyGateHTML(R){
+  return `
+   <div class="survey-gate">
+     <span class="eyebrow">마지막 한 걸음</span>
+     <h2>3분 설문에 참여하고<br><em>상세 처방 · 무료 상담</em>까지 받으세요</h2>
+     <p>설문 첫 칸에 아래 <b>참여코드</b>를 입력해 주세요 (진단 결과와 연결됩니다)</p>
+     <div class="codechip">${R.code}</div><br>
+     <button class="btn-survey" onclick="goSurvey()">📋 설문 참여하기 →</button>
+     <div><button class="linklike" onclick="showDetail()">설문은 나중에 · 상세 리포트 먼저 보기</button></div>
+   </div>`;
+}
+function goSurvey(){
+  if(FOLLOWUP_FORM_URL && FOLLOWUP_FORM_URL.indexOf('http')===0) window.open(FOLLOWUP_FORM_URL,'_blank');
+  showDetail();
+}
+function showDetail(){
+  var d=document.getElementById('detailWrap'); if(d){ d.style.display='block'; window.scrollTo({top:d.offsetTop-70,behavior:'smooth'}); }
+}
+
+function buildReport(){
+  _R = computeReport(); _hp=0; _R.code = genCode();
+  document.getElementById('realReport').innerHTML = reportHTML(_R,false) + surveyGateHTML(_R) + detailTabsHTML(_R);
+  show('s-report');
+  saveResult(_R);
+}
+function restart(){ answers={}; curPart=1; show('s-intro'); }
+
+// ================= 샘플 리포트(티저용) — 배점로직 기반 가상 인물 =================
+const SAMPLE_R = (function(){
+  return {
+    c:{name:'홍길동',band:'50대',gender:'남',baseAge:55,retire:60,cost:400,child:3000,obstacle:'주택 대출',
+       liquid:20000,save:200,tax:10,div:25,pen:'ret',debt:5000,inh:0,car:5,home:true,homeHp:90},
+    scores:{asset:62,health:55,housing:78,job:48,well:35}, total:56,
+    national:100,retpen:55,fixedIncome:180,hb:25,reemp:80,
+    principal:24000,shortfall:245,depletion:69.8,
+    ranked:[{a:'well',s:35},{a:'job',s:48},{a:'health',s:55},{a:'asset',s:62},{a:'housing',s:78}],
+    risks:['주택담보 LTV 30~50%','연금 준비 상태 미파악']
+  };
+})();
+
+// ================= 데이터 보관 (안정화 버전) =================
+// 설계 원칙: (1) 무엇보다 데이터를 잃지 않는다 → 항상 이 기기(localStorage)에 먼저 백업
+//          (2) 그 다음 구글시트로 전송 시도, 실패하면 큐에 남겨 다음 접속 때 자동 재전송
+//          (3) 스팸/오염 방지를 위해 비밀키(GAS_SECRET)를 함께 전송
+//          (4) 최후의 안전망: '이 기기 결과 CSV 내보내기'로 언제든 회수 가능
+const LS_KEY='l2p_results';
+function lsGet(){ try{return JSON.parse(localStorage.getItem(LS_KEY)||'[]');}catch(e){return [];} }
+function lsSet(a){ try{localStorage.setItem(LS_KEY,JSON.stringify(a));}catch(e){} }
+
+function buildPayload(R){
+  const c=R.c;
+  const code = R.code || genCode();
+  const p={
+    '참여자코드':code,'이름':c.name,'연락처':(document.getElementById('uPhone').value||''),
+    '개인정보동의':(document.getElementById('uConsent').checked?'동의':'미동의'),
+    '성별연령':(c.gender+' '+c.band),'목표은퇴':c.retire,'목표생활비':c.cost,'핵심장애물':c.obstacle,
+    '종합점수':R.total,'등급':grade(R.total)[0],
+    '자산구조':R.scores.asset,'건강방어':R.scores.health,'주거연장':R.scores.housing,'일자리역량':R.scores.job,'웰다잉준비':R.scores.well,
+    '예상월소득':R.fixedIncome,'월부족액':R.shortfall,'자산고갈나이':R.depletion,'리스크':R.risks.join(', ')
+  };
+  Q.forEach(q=>{ let a=answers[q.id]; if(a===undefined) return; if(q.type==='text') p[q.id]=a; else if(q.type==='multi') p[q.id]=a.map(i=>q.opts[i].t).join('/'); else p[q.id]=q.opts[a.idx].t; });
+  return p;
+}
+function saveResult(R){
+  const payload=buildPayload(R);
+  const list=lsGet(); list.push({payload,sent:false}); lsSet(list);   // ① 항상 기기에 먼저 백업
+  toast('결과가 이 기기에 저장되었습니다.', 'ok');
+  flushQueue();                                                        // ② 전송 시도(미동의여도 백업은 남고, 전송은 아래에서 판단)
+}
+function flushQueue(){
+  if(!GAS_URL || GAS_URL.indexOf('http')!==0) return;                  // URL 미설정이면 기기 백업만
+  const list=lsGet(); let pending=list.filter(r=>!r.sent);
+  if(!pending.length) return;
+  pending.forEach(r=>{
+    const body=JSON.stringify(Object.assign({__secret:GAS_SECRET}, r.payload));
+    fetch(GAS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body})
+      .then(()=>{ r.sent=true; lsSet(list); toast('구글시트로 전송했습니다.', 'ok'); })
+      .catch(()=>{ toast('전송 실패 — 기기에 보관, 다음 접속 때 재시도합니다.', 'warn'); });
+  });
+}
+function exportCSV(){
+  const list=lsGet(); if(!list.length){ alert('이 기기에 저장된 결과가 없습니다.'); return; }
+  const cols=[]; list.forEach(r=>Object.keys(r.payload).forEach(k=>{ if(cols.indexOf(k)<0) cols.push(k); }));
+  cols.push('전송됨');
+  const esc=v=>'"'+String(v==null?'':v).replace(/"/g,'""')+'"';
+  let csv='﻿'+cols.map(esc).join(',')+'\n';
+  list.forEach(r=>{ csv+=cols.map(c=> c==='전송됨'?esc(r.sent?'Y':'N'):esc(r.payload[c])).join(',')+'\n'; });
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}); const url=URL.createObjectURL(blob);
+  const a=document.createElement('a'); a.href=url; a.download='2막1장_정밀진단_백업.csv'; a.click(); URL.revokeObjectURL(url);
+}
+function toast(msg,type){
+  const el=document.getElementById('saveStatus'); if(!el) return;
+  el.textContent=(type==='warn'?'⚠ ':'✓ ')+msg; el.className='toast show '+(type||'');
+  clearTimeout(window._tt); window._tt=setTimeout(()=>{el.className='toast';},4000);
+}
+window.addEventListener('load', flushQueue); // 접속 시 미전송분 자동 재시도
+</script>
+</body>
+</html>
